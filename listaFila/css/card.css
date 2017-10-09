@@ -1,0 +1,17 @@
+.short {
+    left: auto;
+    right: auto;
+    padding: 10px;
+}
+
+header .container {
+    position: relative;
+}
+
+.index {
+    z-index: 5;
+}
+
+.dropdown{
+    position: absolute;
+}
