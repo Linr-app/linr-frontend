@@ -3,9 +3,9 @@ import App from '../components/App.vue'
 import router from '../components/router'
 
 new Vue({
-  el: '#app',
-  router,
-  template: '<App/>',
-  components: {App},
-  /*render: h => h(App),*/
+    el: '#app',
+    router,
+    template: '<App/>',
+    components: {App},
 })
+
