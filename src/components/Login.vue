@@ -1,17 +1,13 @@
 <template>
-
-    <section class="section">
-
-        <div class="container has-text-centered">
-            <h1 class="title">Login</h1>
-        </div>
-
-        <div class="content">
-            <section class="hero">
-                <div class="hero-body">
-                    <div class="columns is-mobile is-centered">
-                        <div class="column is-one-third has-text-centered">
-
+  <section class="section">
+    <div class="container has-text-centered">
+      <h1 class="title">Login</h1>
+    </div>
+    <div class="content">
+      <section class="hero">
+        <div class="hero-body">
+          <div class="columns is-mobile is-centered">
+            <div class="column has-text-centered">
               <div class="field">
                 <label class="label">Email</label>
                 <div class="control">
@@ -37,16 +33,14 @@
               </button>
             </div>
           </div>
-
-                </div>
-            </section>
         </div>
-
-    </section>
+      </section>
+    </div>
+  </section>
 </template>
 
 <script>
-    import MaskedInput from 'vue-masked-input'
+  import MaskedInput from 'vue-masked-input'
 
   export default {
     name: 'Login',
@@ -64,20 +58,10 @@
   }
 </script>
 
-<style lang="scss">
-    @import "../scss/style";
+</style lang="scss">
+=======
 
-    html, body, #app {
-        height: 100%;
-        width: 100%;
-        margin: 0;
-    }
-
-    html {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    }
-
-    #navbar {
-        background-color: $primary;
-    }
+  #navbar {
+    background-color: $primary;
+  }
 </style>
