@@ -67,11 +67,11 @@
         </div>-->
         <div class="column has-text-centered">
           <a class="button is-danger is-outlined"
-             v-on:click="usuario_desistiu(usuario.id)">Desistiu</a>
+             v-on:click="usuario_desistiu(usuario.id_usuario)">Desistiu</a>
         </div>
         <div class="column has-text-centered">
           <a class="button is-success is-outlined"
-             v-on:click="usuario_atendido(usuario.id)">Entrou</a>
+             v-on:click="usuario_atendido(usuario.id_usuario)">Entrou</a>
         </div>
       </div>
     </div>
@@ -140,17 +140,9 @@
       return {
         usuarios: [],
 
-        restaurante: {nome: 'Outback'},
+        restaurante: {},
 
-        filas: [
-          {
-            id: 1,
-            nome: 'Local',
-          },
-          {
-            id: 2,
-            nome: 'Entrega',
-          }],
+        filas: [],
       }
     },
     mounted () {

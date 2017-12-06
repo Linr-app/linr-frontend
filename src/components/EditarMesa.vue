@@ -45,7 +45,9 @@
     components: {},
     methods: {
       atualizar (id, ocupada) {
+        console.log(ocupada)
         ocupada = !ocupada
+        console.log(ocupada)
         this.$http.put(api('/restaurantes/' + idr + '/mesas/' + id), {
           ocupada: ocupada,
         })

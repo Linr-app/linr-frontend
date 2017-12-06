@@ -40,7 +40,7 @@
         </div>
         <div class="column is-one-quarter">
           <h2 id="tituloFila2">Inserção Manual</h2>
-          <inserir></inserir>
+          <inserir :idfila="nfila"></inserir>
         </div>
       </div>
     </div>

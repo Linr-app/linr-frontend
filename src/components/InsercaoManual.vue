@@ -35,12 +35,12 @@
 
   export default {
     name: 'InsercaoManual',
+    props: ['idfila'],
     methods: {
       insertmanual () {
         const [form] = document.getElementsByTagName('form')
 
         const id_user = Math.floor(Math.random() * 10000000)
-        const id_fila = 1
 
         const vm = this
 
@@ -50,9 +50,9 @@
           telefone: form.TelephoneField.value,
         })
           .then(response => {
-            vm.$http.put(api(`/filas/${id_fila}/enter`), {
+            vm.$http.put(api(`/filas/${vm.idfila}/enter`), {
               id_usuario: id_user,
-              qnt_pessoas: form.NumPeopleField.value,
+              qtd_pessoas: form.NumPeopleField.value,
             })
               .then(response => {
                 console.log(`Response: ${response}`)
