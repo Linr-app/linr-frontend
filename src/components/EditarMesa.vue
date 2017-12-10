@@ -20,7 +20,7 @@
                       v-on:click="atualizar(mesa.id_mesa, mesa.ocupada)">
                 Ocupada
               </button>
-              <button class="button is-primary is-outlined card-footer-item" v-else
+              <button class="button is-success is-outlined card-footer-item" v-else
                       v-on:click="atualizar(mesa.id_mesa, mesa.ocupada)">
                 Desocupada
               </button>
@@ -45,9 +45,7 @@
     components: {},
     methods: {
       atualizar (id, ocupada) {
-        console.log(ocupada)
         ocupada = !ocupada
-        console.log(ocupada)
         this.$http.put(api('/restaurantes/' + idr + '/mesas/' + id), {
           ocupada: ocupada,
         })
@@ -57,6 +55,7 @@
           })
 
         this.pegarMesas()
+        this.$router.push({name: 'Mesas'})
       },
       excluir (id) {
         this.$http.put(api('/restaurantes/' + idr + '/mesas/' + id), {
@@ -76,6 +75,8 @@
           .then(function (response) {
             vm.mesas = response.data.data.mesas.filter(e => {
               return e.capacidade > 0
+            }).sort(function (a, b){
+              return (a.id_mesa - b.id_mesa)
             })
           })
       },
