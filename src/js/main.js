@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import VueSession from 'vue-session'
 
 import App from '../components/App.vue'
 import router from '../pages'
 
 Vue.use(VueAxios, axios)
+Vue.use(VueSession)
 
 new Vue({
   el: '#app',
@@ -15,8 +17,6 @@ new Vue({
     App,
   },
 })
-
-Vue.use(VueAxios, axios)
 
 /**
  * Calculates user snowflake considering date, fingerprint, restaurant and client type.
@@ -35,6 +35,13 @@ Vue.prototype.$CalculateSnowflake = function (restaurantid, userid) {
   const cljs = new ClientJS()
   const d = new Date()
 
-  return pad(cljs.getFingerprint(), 10) + d.getFullYear() + pad(d.getMonth(), 2) + pad(d.getDay(), 2) + pad(restaurantid, 3) + pad(userid, 3)
+  return (pad(cljs.getFingerprint(), 10).substr(0, 5)
+      + (d.getFullYear() + '').substring(3)
+      + pad(d.getMonth(), 2)
+      + pad(d.getDate(), 2)
+      + pad(d.getMinutes(), 2)
+      + pad(d.getSeconds(), 2)
+      + pad(restaurantid, 2)
+      + pad(userid, 2))
 
 }
