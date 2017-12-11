@@ -1,9 +1,6 @@
 <template>
   <section id="app">
-    <navigation></navigation>
-    <div class="container is-fluid has-text-centered">
       <router-view></router-view>
-    </div>
   </section>
 </template>
 
